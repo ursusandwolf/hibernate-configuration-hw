@@ -20,6 +20,9 @@ public class MovieDaoImpl implements MovieDao {
             return movie;
         }
         catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
             throw new DataProcessingException("Can't insert movie " + movie, e);
         }
     }

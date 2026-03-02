@@ -6,8 +6,12 @@ import mate.academy.model.Movie;
 
 @Service
 public class MovieServiceImpl implements MovieService {
-    MovieDao movieDao;
-    MovieServiceImpl (MovieDao movieDao) {
+    private MovieDao movieDao;
+
+    public MovieServiceImpl() {
+    }
+
+    MovieServiceImpl(MovieDao movieDao) {
         this.movieDao = movieDao;
     }
 
@@ -20,5 +24,13 @@ public class MovieServiceImpl implements MovieService {
     public Movie get(Long id) {
         return movieDao.get(id)
                 .orElseThrow(() -> new RuntimeException("Movie not found"));
+    }
+
+    public MovieDao getMovieDao() {
+        return movieDao;
+    }
+
+    public void setMovieDao(MovieDao movieDao) {
+        this.movieDao = movieDao;
     }
 }

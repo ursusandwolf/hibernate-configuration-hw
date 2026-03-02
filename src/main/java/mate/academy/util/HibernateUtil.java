@@ -7,12 +7,17 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public final class HibernateUtil {
+    private static final SessionFactory instance = initSessionFactory();
 
     private HibernateUtil() {
 
     }
 
     public static SessionFactory getSessionFactory() {
+        return instance;
+    }
+
+    private static SessionFactory initSessionFactory() {
         Configuration configuration = new Configuration();
         configuration.configure(); // hibernate.cfg.xml
 

@@ -18,6 +18,5 @@ public class Main {
             movieService.add(movie);
             System.out.println(movie);
         }
-
     }
 }

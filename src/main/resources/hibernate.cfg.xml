@@ -5,7 +5,10 @@
 
 <hibernate-configuration>
     <session-factory>
+        <!-- TEST
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        -->
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/test?serverTimeZone=UTC</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">${db.username}</property>
